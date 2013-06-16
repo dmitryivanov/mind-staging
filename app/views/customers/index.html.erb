@@ -1,0 +1,48 @@
+<h1>Manage Customers</h1>
+
+<%= form_tag customers_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
+
+<table>
+  <tr>
+    <th>customer</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>city</th>
+    <th>state</th>
+    <th>country</th>
+    <th>zip</th>
+    <th>phone</th>
+    <th>email</th>
+    <th>last updated</th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer. id %></td>
+    <td><%= customer. first_name %></td>
+    <td><%= customer. last_name %></td>
+    <td><%= customer. billing_addr_city %></td>
+    <td><%= customer. billing_addr_state %></td>
+    <td><%= customer. billing_addr_cc %></td>
+    <td><%= customer. billing_addr_zip %></td>
+    <td><%= customer. phone_number %></td>
+    <td><%= customer. email_addr %></td>
+    <td><%= customer. updated_at %></td>        
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p><%= will_paginate @customers %></p><br/>
+
+<%= link_to 'New Customer', new_customer_path %>

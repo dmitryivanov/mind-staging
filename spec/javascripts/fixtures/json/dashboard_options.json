@@ -1,0 +1,803 @@
+{
+  "dashboard_data": {
+    "created_at": "2013-02-26T08:49:07Z",
+    "dashboard_id": null,
+    "description": "some description2",
+    "id": 1,
+    "module": null,
+    "name": "Some name1",
+    "source_system": null,
+    "updated_at": "2013-02-26T08:49:07Z"
+  },
+  "dashboard_modules": [
+    {
+      "created_at": "2013-03-30T10:57:14Z",
+      "dashboard_id": 1,
+      "date": "created_at",
+      "dimension": "mailchimp_campaign_id",
+      "dimension_value": "14",
+      "id": 16,
+      "metric": "opens",
+      "module_type": "",
+      "notes": "",
+      "table": "daily_stats",
+      "updated_at": "2013-05-02T14:34:55Z",
+      "metric_name": "Opens",
+      "dimension_name": "Mailchimp Campaign",
+      "dimension_value_name": "Non Corrupti Dignissimos",
+      "date_name": "Created At",
+      "data": [
+        {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 0,
+          "met1_label": "opens",
+          "date1": "2012-07-25"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 99,
+          "met1_label": "opens",
+          "date1": "2012-07-26"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 15,
+          "met1_label": "opens",
+          "date1": "2012-07-27"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 77,
+          "met1_label": "opens",
+          "date1": "2012-07-28"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 26,
+          "met1_label": "opens",
+          "date1": "2012-07-29"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 79,
+          "met1_label": "opens",
+          "date1": "2012-07-30"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 72,
+          "met1_label": "opens",
+          "date1": "2012-07-31"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 13,
+          "met1_label": "opens",
+          "date1": "2012-08-01"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 10,
+          "met1_label": "opens",
+          "date1": "2012-08-02"
+        }, {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 93,
+          "met1_label": "opens",
+          "date1": "2012-08-03"
+        }
+      ]
+    }, {
+      "created_at": "2013-03-30T10:52:55Z",
+      "dashboard_id": 1,
+      "date": "created_at",
+      "dimension": "mailchimp_campaign_id",
+      "dimension_value": "13",
+      "id": 15,
+      "metric": "unique_clicks",
+      "module_type": "trend_chart",
+      "notes": "",
+      "table": "daily_stats",
+      "updated_at": "2013-05-02T14:35:20Z",
+      "metric_name": "Unique Clicks",
+      "dimension_name": "Mailchimp Campaign",
+      "dimension_value_name": "Dolorum Omnis Iste",
+      "date_name": "Created At",
+      "data": [
+        {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 79,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-20"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 66,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-21"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 56,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-22"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 13,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-23"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 2,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-24"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 99,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-25"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 96,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-26"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 14,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-27"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 94,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-28"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 33,
+          "met1_label": "unique_clicks",
+          "date1": "2012-10-29"
+        }
+      ]
+    }, {
+      "created_at": "2013-03-01T04:34:23Z",
+      "dashboard_id": 1,
+      "date": "",
+      "dimension": "mailchimp_campaign_id",
+      "dimension_value": null,
+      "id": 4,
+      "metric": "abuse_reports",
+      "module_type": "bar_chart",
+      "notes": "test",
+      "table": "daily_stats",
+      "updated_at": "2013-03-30T16:41:01Z",
+      "metric_name": "Abuse Reports",
+      "dimension_name": "Mailchimp Campaign",
+      "dimension_value_name": null,
+      "date_name": null,
+      "data": [
+        {
+          "dimension1": "Non Corrupti Dignissimos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 568,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Quos Incidunt Veniam",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 556,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Commodi Vitae Ex",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 520,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Nesciunt Repellendus Quos",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 512,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Qui Molestiae Iusto",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 478,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Illum Ut Inventore",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 448,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Dolorum Omnis Iste",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 406,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Iusto Illum Aliquid",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 392,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "Et Vitae Deleniti",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 371,
+          "met1_label": "abuse_reports"
+        }, {
+          "dimension1": "In Dolores Dolor",
+          "dim1_label": "mailchimp_campaign_id",
+          "metric1": 344,
+          "met1_label": "abuse_reports"
+        }
+      ]
+    }
+  ],
+  "chart_selectors_data": {
+    "tables": [
+      {
+        "name": "Activities",
+        "value": "activities",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Name",
+            "value": "name"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Name",
+            "value": "name"
+          }
+        ],
+        "dates": [
+          {
+            "name": "Created At",
+            "value": "created_at"
+          }, {
+            "name": "Updated At",
+            "value": "updated_at"
+          }
+        ]
+      }, {
+        "name": "Activity References",
+        "value": "activity_references",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Activity",
+            "value": "activity_id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Activity",
+            "value": "activity_id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }
+        ],
+        "dates": []
+      }, {
+        "name": "Customer Facts",
+        "value": "customer_facts",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }, {
+            "name": "Customer Warranty",
+            "value": "customer_warranty_id"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }, {
+            "name": "Customer Warranty",
+            "value": "customer_warranty_id"
+          }
+        ],
+        "dates": [
+          {
+            "name": "Created At",
+            "value": "created_at"
+          }, {
+            "name": "Updated At",
+            "value": "updated_at"
+          }
+        ]
+      }, {
+        "name": "Customer Warranties",
+        "value": "customer_warranties",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }, {
+            "name": "Warranty Part No",
+            "value": "warranty_part_no"
+          }, {
+            "name": "Warranty Part Desc",
+            "value": "warranty_part_desc"
+          }, {
+            "name": "Length Lace Pack",
+            "value": "length_lace_pack"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }, {
+            "name": "Warranty Part No",
+            "value": "warranty_part_no"
+          }, {
+            "name": "Warranty Part Desc",
+            "value": "warranty_part_desc"
+          }, {
+            "name": "Length Lace Pack",
+            "value": "length_lace_pack"
+          }
+        ],
+        "dates": [
+          {
+            "name": "Created At",
+            "value": "created_at"
+          }, {
+            "name": "Updated At",
+            "value": "updated_at"
+          }
+        ]
+      }, {
+        "name": "Customers",
+        "value": "customers",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }, {
+            "name": "First Name",
+            "value": "first_name"
+          }, {
+            "name": "Last Name",
+            "value": "last_name"
+          }, {
+            "name": "Billing Addr Ln1",
+            "value": "billing_addr_ln1"
+          }, {
+            "name": "Billing Addr Ln2",
+            "value": "billing_addr_ln2"
+          }, {
+            "name": "Billing Addr City",
+            "value": "billing_addr_city"
+          }, {
+            "name": "Billing Addr State",
+            "value": "billing_addr_state"
+          }, {
+            "name": "Billing Addr Cc",
+            "value": "billing_addr_cc"
+          }, {
+            "name": "Billing Addr Zip",
+            "value": "billing_addr_zip"
+          }, {
+            "name": "Shipping Addr Ln1",
+            "value": "shipping_addr_ln1"
+          }, {
+            "name": "Shipping Addr Ln2",
+            "value": "shipping_addr_ln2"
+          }, {
+            "name": "Shipping Addr City",
+            "value": "shipping_addr_city"
+          }, {
+            "name": "Shipping Addr State",
+            "value": "shipping_addr_state"
+          }, {
+            "name": "Shipping Addr Cc",
+            "value": "shipping_addr_cc"
+          }, {
+            "name": "Shipping Addr Zip",
+            "value": "shipping_addr_zip"
+          }, {
+            "name": "Phone Number",
+            "value": "phone_number"
+          }, {
+            "name": "Email Addr",
+            "value": "email_addr"
+          }, {
+            "name": "Foreign",
+            "value": "foreign_id"
+          }, {
+            "name": "Email Subscription State",
+            "value": "email_subscription_state"
+          }, {
+            "name": "Email Permission State",
+            "value": "email_permission_state"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Customer",
+            "value": "customer_id"
+          }, {
+            "name": "First Name",
+            "value": "first_name"
+          }, {
+            "name": "Last Name",
+            "value": "last_name"
+          }, {
+            "name": "Billing Addr Ln1",
+            "value": "billing_addr_ln1"
+          }, {
+            "name": "Billing Addr Ln2",
+            "value": "billing_addr_ln2"
+          }, {
+            "name": "Billing Addr City",
+            "value": "billing_addr_city"
+          }, {
+            "name": "Billing Addr State",
+            "value": "billing_addr_state"
+          }, {
+            "name": "Billing Addr Cc",
+            "value": "billing_addr_cc"
+          }, {
+            "name": "Billing Addr Zip",
+            "value": "billing_addr_zip"
+          }, {
+            "name": "Shipping Addr Ln1",
+            "value": "shipping_addr_ln1"
+          }, {
+            "name": "Shipping Addr Ln2",
+            "value": "shipping_addr_ln2"
+          }, {
+            "name": "Shipping Addr City",
+            "value": "shipping_addr_city"
+          }, {
+            "name": "Shipping Addr State",
+            "value": "shipping_addr_state"
+          }, {
+            "name": "Shipping Addr Cc",
+            "value": "shipping_addr_cc"
+          }, {
+            "name": "Shipping Addr Zip",
+            "value": "shipping_addr_zip"
+          }, {
+            "name": "Phone Number",
+            "value": "phone_number"
+          }, {
+            "name": "Email Addr",
+            "value": "email_addr"
+          }, {
+            "name": "Foreign",
+            "value": "foreign_id"
+          }, {
+            "name": "Email Subscription State",
+            "value": "email_subscription_state"
+          }, {
+            "name": "Email Permission State",
+            "value": "email_permission_state"
+          }
+        ],
+        "dates": [
+          {
+            "name": "Updated At",
+            "value": "updated_at"
+          }, {
+            "name": "Created At",
+            "value": "created_at"
+          }
+        ]
+      }, {
+        "name": "Daily Stats",
+        "value": "daily_stats",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Mailchimp Campaign",
+            "value": "mailchimp_campaign_id"
+          }, {
+            "name": "Syntax Errors",
+            "value": "syntax_errors"
+          }, {
+            "name": "Hard Bounces",
+            "value": "hard_bounces"
+          }, {
+            "name": "Soft Bounces",
+            "value": "soft_bounces"
+          }, {
+            "name": "Unsubscribes",
+            "value": "unsubscribes"
+          }, {
+            "name": "Abuse Reports",
+            "value": "abuse_reports"
+          }, {
+            "name": "Forwards",
+            "value": "forwards"
+          }, {
+            "name": "Forwards Opens",
+            "value": "forwards_opens"
+          }, {
+            "name": "Opens",
+            "value": "opens"
+          }, {
+            "name": "Unique Opens",
+            "value": "unique_opens"
+          }, {
+            "name": "Clicks",
+            "value": "clicks"
+          }, {
+            "name": "Unique Clicks",
+            "value": "unique_clicks"
+          }, {
+            "name": "Users Who Clicked",
+            "value": "users_who_clicked"
+          }, {
+            "name": "Emails Sent",
+            "value": "emails_sent"
+          }, {
+            "name": "Unique Likes",
+            "value": "unique_likes"
+          }, {
+            "name": "Recipient Likes",
+            "value": "recipient_likes"
+          }, {
+            "name": "Facebook Likes",
+            "value": "facebook_likes"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Mailchimp Campaign",
+            "value": "mailchimp_campaign_id"
+          }, {
+            "name": "Syntax Errors",
+            "value": "syntax_errors"
+          }, {
+            "name": "Hard Bounces",
+            "value": "hard_bounces"
+          }, {
+            "name": "Soft Bounces",
+            "value": "soft_bounces"
+          }, {
+            "name": "Unsubscribes",
+            "value": "unsubscribes"
+          }, {
+            "name": "Abuse Reports",
+            "value": "abuse_reports"
+          }, {
+            "name": "Forwards",
+            "value": "forwards"
+          }, {
+            "name": "Forwards Opens",
+            "value": "forwards_opens"
+          }, {
+            "name": "Opens",
+            "value": "opens"
+          }, {
+            "name": "Unique Opens",
+            "value": "unique_opens"
+          }, {
+            "name": "Clicks",
+            "value": "clicks"
+          }, {
+            "name": "Unique Clicks",
+            "value": "unique_clicks"
+          }, {
+            "name": "Users Who Clicked",
+            "value": "users_who_clicked"
+          }, {
+            "name": "Emails Sent",
+            "value": "emails_sent"
+          }, {
+            "name": "Unique Likes",
+            "value": "unique_likes"
+          }, {
+            "name": "Recipient Likes",
+            "value": "recipient_likes"
+          }, {
+            "name": "Facebook Likes",
+            "value": "facebook_likes"
+          }
+        ],
+        "dates": [
+          {
+            "name": "Last Open",
+            "value": "last_open"
+          }, {
+            "name": "Last Click",
+            "value": "last_click"
+          }, {
+            "name": "Created At",
+            "value": "created_at"
+          }, {
+            "name": "Updated At",
+            "value": "updated_at"
+          }
+        ]
+      }, {
+        "name": "Mailchimp Campaigns",
+        "value": "mailchimp_campaigns",
+        "dimensions": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Mailchimp",
+            "value": "mailchimp_id"
+          }, {
+            "name": "Title",
+            "value": "title"
+          }, {
+            "name": "Syntax Errors",
+            "value": "syntax_errors"
+          }, {
+            "name": "Hard Bounces",
+            "value": "hard_bounces"
+          }, {
+            "name": "Soft Bounces",
+            "value": "soft_bounces"
+          }, {
+            "name": "Unsubscribes",
+            "value": "unsubscribes"
+          }, {
+            "name": "Abuse Reports",
+            "value": "abuse_reports"
+          }, {
+            "name": "Forwards",
+            "value": "forwards"
+          }, {
+            "name": "Forwards Opens",
+            "value": "forwards_opens"
+          }, {
+            "name": "Opens",
+            "value": "opens"
+          }, {
+            "name": "Unique Opens",
+            "value": "unique_opens"
+          }, {
+            "name": "Clicks",
+            "value": "clicks"
+          }, {
+            "name": "Unique Clicks",
+            "value": "unique_clicks"
+          }, {
+            "name": "Users Who Clicked",
+            "value": "users_who_clicked"
+          }, {
+            "name": "Emails Sent",
+            "value": "emails_sent"
+          }, {
+            "name": "Unique Likes",
+            "value": "unique_likes"
+          }, {
+            "name": "Recipient Likes",
+            "value": "recipient_likes"
+          }, {
+            "name": "Facebook Likes",
+            "value": "facebook_likes"
+          }
+        ],
+        "metrics": [
+          {
+            "name": "Id",
+            "value": "id"
+          }, {
+            "name": "Mailchimp",
+            "value": "mailchimp_id"
+          }, {
+            "name": "Title",
+            "value": "title"
+          }, {
+            "name": "Syntax Errors",
+            "value": "syntax_errors"
+          }, {
+            "name": "Hard Bounces",
+            "value": "hard_bounces"
+          }, {
+            "name": "Soft Bounces",
+            "value": "soft_bounces"
+          }, {
+            "name": "Unsubscribes",
+            "value": "unsubscribes"
+          }, {
+            "name": "Abuse Reports",
+            "value": "abuse_reports"
+          }, {
+            "name": "Forwards",
+            "value": "forwards"
+          }, {
+            "name": "Forwards Opens",
+            "value": "forwards_opens"
+          }, {
+            "name": "Opens",
+            "value": "opens"
+          }, {
+            "name": "Unique Opens",
+            "value": "unique_opens"
+          }, {
+            "name": "Clicks",
+            "value": "clicks"
+          }, {
+            "name": "Unique Clicks",
+            "value": "unique_clicks"
+          }, {
+            "name": "Users Who Clicked",
+            "value": "users_who_clicked"
+          }, {
+            "name": "Emails Sent",
+            "value": "emails_sent"
+          }, {
+            "name": "Unique Likes",
+            "value": "unique_likes"
+          }, {
+            "name": "Recipient Likes",
+            "value": "recipient_likes"
+          }, {
+            "name": "Facebook Likes",
+            "value": "facebook_likes"
+          }
+        ],
+        "dates": [
+          {
+            "name": "Last Open",
+            "value": "last_open"
+          }, {
+            "name": "Last Click",
+            "value": "last_click"
+          }, {
+            "name": "Created At",
+            "value": "created_at"
+          }, {
+            "name": "Updated At",
+            "value": "updated_at"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>trend chart example</title>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.js"></script>
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/new_trend_chart.js"></script>
+<style>
+
+/*.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}*/
+
+
+</style>
+<style>
+      .axis {
+          font-family: arial;
+          font-size:0.6em;
+      }
+      path {
+          fill:none;
+          stroke: steelblue;
+          stroke-width: 1.5px;
+      }
+      text {
+        font-family: Helvetica;
+        stroke: none;
+        fill: black;;
+        font-size: .6em;
+      }
+      .tick {
+          fill:none;
+          stroke:black;
+      }
+      circle{
+          stroke:black;
+          stroke-width:0.5px;
+      }
+
+  </style>
+
+  <script>
+    var module_2_data = [
+      { 
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:15
+        ,met1_label:"clicks"
+        ,date1:"2013-03-01"} 
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:22
+        ,met1_label:"clicks"
+        ,date1:"2013-03-02"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:12
+        ,met1_label:"clicks"
+        ,date1:"2013-03-03"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:34
+        ,met1_label:"clicks"
+        ,date1:"2013-03-04"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:46
+        ,met1_label:"clicks"
+        ,date1:"2013-03-05"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:28
+        ,met1_label:"clicks"
+        ,date1:"2013-03-06"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:21
+        ,met1_label:"clicks"
+        ,date1:"2013-03-07"}
+      ,{
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:18
+        ,met1_label:"clicks"
+        ,date1:"2013-03-08"}
+      ,{
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:24
+        ,met1_label:"clicks"
+        ,date1:"2013-03-09"}
+    ];
+
+    var module_1_data = [
+      { 
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:15
+        ,met1_label:"opens"
+        ,date1:"2013-03-01"} 
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:26
+        ,met1_label:"opens"
+        ,date1:"2013-03-02"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:14
+        ,met1_label:"opens"
+        ,date1:"2013-03-03"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:8
+        ,met1_label:"opens"
+        ,date1:"2013-03-04"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:28
+        ,met1_label:"opens"
+        ,date1:"2013-03-05"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:21
+        ,met1_label:"opens"
+        ,date1:"2013-03-06"}
+      ,{  
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:16
+        ,met1_label:"opens"
+        ,date1:"2013-03-07"}
+      ,{
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:24
+        ,met1_label:"opens"
+        ,date1:"2013-03-08"}
+      ,{
+        dimension1:"snow is fun"
+        ,dim1_label:"campaign"
+        ,metric1:38
+        ,met1_label:"opens"
+        ,date1:"2013-03-09"}
+    ];
+  </script>
+</head>
+
+<body>
+  <div id="module_1">
+    <script>
+      window.trend_chart("600","220",module_1_data,$('body')[0]);
+    </script>
+  </div>
+
+  <div id="module_2">
+    <script>
+      // window.new_trend_chart("220","600",module_2_data,"2");
+    </script>
+  </div>
+
+</body>
+
+</html>
+

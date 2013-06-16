@@ -1,0 +1,27 @@
+= form_for(@dataload_ga) do |f|
+
+  - if @dataload_ga.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@dataload_ga.errors.count, "error")
+        prohibited this dataload_ga from being saved:
+      %ul
+        - @dataload_ga.errors.full_messages.each do |msg|
+          %li= msg
+
+  = render partial: "form_#{@dataload_ga.form_state}", locals: { f: f }
+
+  / 
+  / - unless @dataload_ga.new_record?
+  /   .field
+  /     = f.label :ga_account_id, "Account"
+  /     %br/
+  /     = f.select :ga_account_id, @dataload_ga.accounts.collect {|a| [ a.name, a.id ] }, { :include_blank => true }
+  /     
+  /     - @dataload_ga.accounts.each do |account|
+  /     
+  /       = @dataload_ga.hidden_profile_select_for_account(account)                         
+
+  .actions
+    = f.submit (@dataload_ga.new_record? ? 'Create' : 'Next')
+    = button_to 'Cancel', dataload_gas_path

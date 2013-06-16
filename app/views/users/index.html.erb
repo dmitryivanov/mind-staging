@@ -1,0 +1,31 @@
+<h1>Users Admin</h1>
+
+<%= form_tag users_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
+
+<table>
+  <tr>
+    <th>email</th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.updated_at %></td>        
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p><%= will_paginate @users %></p><br/>
+
+<%= link_to 'sign up new user', signup_path %>

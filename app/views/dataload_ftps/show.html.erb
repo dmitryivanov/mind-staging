@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>/:</b>
+  <%= @dataload_ftp./ %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @dataload_ftp.file_name %>
+</p>
+
+<p>
+  <b>Request user:</b>
+  <%= @dataload_ftp.request_user %>
+</p>
+
+<p>
+  <b>Success ind:</b>
+  <%= @dataload_ftp.success_ind %>
+</p>
+
+<p>
+  <b>S3:</b>
+  <%= @dataload_ftp.s3_id %>
+</p>
+
+<p>
+  <b>Table name:</b>
+  <%= @dataload_ftp.table_name %>
+</p>
+
+<p>
+  <b>Ftp url:</b>
+  <%= @dataload_ftp.ftp_url %>
+</p>
+
+<p>
+  <b>Ftp username:</b>
+  <%= @dataload_ftp.ftp_username %>
+</p>
+
+<p>
+  <b>Ftp password:</b>
+  <%= @dataload_ftp.ftp_password %>
+</p>
+
+<p>
+  <b>Ftp directory:</b>
+  <%= @dataload_ftp.ftp_directory %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @dataload_ftp.schedule %>
+</p>
+
+
+<%= link_to 'Edit', edit_dataload_ftp_path(@dataload_ftp) %> |
+<%= link_to 'Back', dataload_ftps_path %>

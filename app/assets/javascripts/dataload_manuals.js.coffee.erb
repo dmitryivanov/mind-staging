@@ -1,0 +1,20 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+$ ->
+  update_csv_import = ->
+    id = $('.csv_import_status').attr('id').match(/dataload-(\d+)/)[1]
+    $.get('/dataload_manuals/'+id+'.json', (data) ->
+      if data.csv_imported
+        $('.csv_import_status').html('File has been imported')
+        console.log ('imported')
+      else
+        setTimeout(update_csv_import, 1000)
+        console.log ('importing')
+    )
+    
+  import_status = $.trim($('.csv_import_status').text())
+  if import_status != 'File has been imported' and ($(".csv_import_status").length > 0)
+    console.log ('setTimeout')
+    setTimeout(update_csv_import, 1000)

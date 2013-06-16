@@ -1,0 +1,51 @@
+RDS Migrations & Schema management
+-----------------------------------
+
+In db/rds_migrate we have migrations that run only for RDS db, via RdsMigration class,
+which is defined in lib/rds.rb. It basically establishes connection with RDS instead of
+database defined in database.yml. 
+
+Tasks for managing RDS db are:
+rake rds:db:migrate
+rake rds:db:rollback
+rake rds:schema:load
+rake rds:schema:dump
+
+Also, there are rake tasks to create secondary test database:
+rake rds:test:create
+rake rds:test:migrate
+
+RDS settings are autoloaded from .env and .env.test files via dotenv gem in development
+and test environments.
+
+Implemented as a workaround for heroku wich do not allow working with two databases via database.yml.
+
+
+
+
+# Q: What members info should be loaded to mailchimp as merge fields and what will be their name?
+#    For now I load only emails and first/last name
+
+# Q: Do we have to update local customers in mailchimp? E.g. when user email or name changes in our db
+
+# Q: people are marked as cleaned even if they cleaned or unsubscribed only on one list
+#   we can use a mc_list reference to tie changes to list
+
+# Note: mailchimp list and campaigns are global for app, not bound to user,
+# so is for last updated timestamps wich are used to calculate delta
+
+# Note: will have lots of customers that do not have an email.
+#       and there are cases where an email could appear twice.
+
+# Q: if customer or warranty is found, should it be updated with new info?
+
+# Note: Right now when we load customer_warranties dataload, we don't have field
+#       to indicate email_permission_ind
+
+# if customer is in db he is not updated,
+# and if cleared/unsubscribed customer in not in db,
+# he is not created
+
+# also, cleared/unsubscribed state is per-customer and
+# not per-list, so if customer is unsubscribed from any
+# list, he will be marked as unsubscribed in our db

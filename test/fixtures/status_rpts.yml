@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+   status_id: MyString
+  description: MyText
+  error_msg: MyString
+
+two:
+   status_id: MyString
+  description: MyText
+  error_msg: MyString

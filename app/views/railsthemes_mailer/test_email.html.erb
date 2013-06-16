@@ -1,0 +1,67 @@
+<% content_for :top_section do %>
+  <div>
+    Here is the content that goes at the top of your email. You can give a general announcement, write some copy, or do anything else. You could even put an image up here using Rails's image_tag helper.
+  </div>
+  <div>&#160;</div>
+  <div>
+    Here is another line in the email. This may or may not be as important as the first line.
+  </div>
+<% end %>
+
+<% content_for :email_blocks do %>
+  <%= email_block do %>
+    <% content_for :left_side do %>
+      <%= side_block %>
+    <% end %>
+
+    <% content_for :right_side do %>
+      <%= side_block %>
+    <% end %>
+  <% end %>
+
+  <%= email_block do %>
+    <% content_for :left_side do %>
+      <%= side_block :header => 'left side' do %>
+        <% image 'http://placehold.it/260x200' %>
+        Left side content
+      <% end %>
+    <% end %>
+
+    <% content_for :right_side do %>
+      <%= side_block :header => 'right side' do %>
+        <% image 'http://placehold.it/260x200' %>
+        Right side content
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= email_block do %>
+    <% content_for :right_side do %>
+      <%= side_block do %>
+        <% header 'single right side' %>
+        <% image 'http://placehold.it/260x200' %>
+        Right side content with no left side to deal with
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= email_block do %>
+    <% content_for :left_side do %>
+      <%= side_block do %>
+        <% header 'single left side' %>
+        <% image 'http://placehold.it/260x200' %>
+        Left side content with no right side to deal with
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= email_block do %>
+    <% content_for :left_side do %>
+      <%= side_block %>
+    <% end %>
+
+    <% content_for :right_side do %>
+      <%= side_block %>
+    <% end %>
+  <% end %>
+<% end %>

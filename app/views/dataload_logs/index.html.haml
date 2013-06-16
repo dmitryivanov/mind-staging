@@ -1,0 +1,39 @@
+- content_for :head do
+  :css
+    td.created_at { white-space: nowrap }
+    #contents { padding-bottom: 18px }
+%h1 Listing processed dataloads
+
+%table
+  %tr
+    %th User
+    %th Time
+    %th Status
+    %th Success
+    %th Type
+    %th Success rows
+    %th Error rows
+    %th Error msg
+  - @dataload_logs.each do |d|
+    %tr
+      %td
+        - unless d.user_id.blank?
+          = d.user.email
+        - else
+          the-brain
+      %td.created_at= d.created_at
+      %td= d.status
+      %td
+        - unless d.status == 'running'
+          = d.is_successfull? ? 'Success' : 'Error'
+      %td= d.dataload_type
+      %td= d.success_rows
+      %td= d.error_rows
+      %td
+        - unless d.error_text.blank?
+          = truncate d.error_text.first[:error_text]
+          - if d.error_text.size > 1
+            %strong (#{d.error_text.size} errors in total)
+            
+            
+= will_paginate @dataload_logs

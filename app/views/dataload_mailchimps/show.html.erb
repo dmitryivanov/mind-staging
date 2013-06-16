@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>/:</b>
+  <%= @dataload_mailchimp./ %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @dataload_mailchimp.file_name %>
+</p>
+
+<p>
+  <b>Request user:</b>
+  <%= @dataload_mailchimp.request_user %>
+</p>
+
+<p>
+  <b>Success ind:</b>
+  <%= @dataload_mailchimp.success_ind %>
+</p>
+
+<p>
+  <b>Table name:</b>
+  <%= @dataload_mailchimp.table_name %>
+</p>
+
+<p>
+  <b>Mc username:</b>
+  <%= @dataload_mailchimp.mc_username %>
+</p>
+
+<p>
+  <b>Mc password:</b>
+  <%= @dataload_mailchimp.mc_password %>
+</p>
+
+<p>
+  <b>Campaigns:</b>
+  <%= @dataload_mailchimp.campaigns %>
+</p>
+
+<p>
+  <b>Metrics:</b>
+  <%= @dataload_mailchimp.metrics %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @dataload_mailchimp.schedule %>
+</p>
+
+
+<%= link_to 'Edit', edit_dataload_mailchimp_path(@dataload_mailchimp) %> |
+<%= link_to 'Back', dataload_mailchimps_path %>

@@ -1,0 +1,85 @@
+- content_for :head do
+  :css
+    ul.mailchimp_lists { list-style-type: none; margin-left: 0 }
+    .fieldset { margin-bottom: 36px }
+
+= form_for @dataload, :url => dataload_mailchimp_path do |f|
+  - if @dataload.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@dataload.errors.count, "error")
+        occured:
+      %ul
+        - @dataload.errors.full_messages.each do |msg|
+          %li= msg
+          
+  .fieldset
+    .field
+      = f.label :api_key
+      %br/
+      = f.text_field :api_key
+  
+  - if @dataload.new_record? || @dataload.api_key.blank?
+    %p Please specify Mailchimp API key for additional configuration
+
+  - else
+    .fieldset
+      .field
+        = f.check_box :subscr_upload_enabled
+        = f.label :subscr_upload_enabled, 'Enable upload of sucscribers'
+    
+      .field
+        = f.label :subscr_upload_interval, 'Subscriber update interval'
+        %br/
+        = f.select :subscr_upload_interval, options_for_select(DataloadMailchimp::INTERVALS, @dataload.subscr_upload_interval)
+      
+      - unless @lists.blank?
+        .field  
+          %p Please select destination lists:
+          %ul.mailchimp_lists
+            - @lists.each do |list|
+              %li
+                = check_box_tag "dataload_mailchimp[destination_list_ids][]", list.id, @dataload.destination_lists.include?(list)
+                = label_tag list.name
+              
+    .fieldset
+      .field
+        = f.check_box :subscr_download_enabled
+        = f.label :subscr_download_enabled, 'Enable download of sucscribers'
+    
+      .field
+        = f.label :subscr_download_interval, 'Subscriber download interval'
+        %br/
+        = f.select :subscr_download_interval, options_for_select(DataloadMailchimp::INTERVALS, @dataload.subscr_download_interval)
+  
+      - unless @lists.blank?
+        .field  
+          %p Please select source lists:
+          %ul.mailchimp_lists
+            - @lists.each do |list|
+              %li
+                = check_box_tag "dataload_mailchimp[source_list_ids][]", list.id, @dataload.source_lists.include?(list)
+                = label_tag list.name
+                
+    .fieldset
+      .field
+        = f.check_box :subscr_move_enabled
+        = f.label :subscr_move_enabled, 'Enable moving of sucscribers from "get dialed" to "monthly newsletter"'
+
+      .field
+        = f.label :subscr_move_interval, 'Subscriber download interval'
+        %br/
+        = f.select :subscr_move_interval, options_for_select(DataloadMailchimp::INTERVALS, @dataload.subscr_move_interval)
+            
+
+    .fieldset        
+      .field
+        = f.check_box :cmp_update_enabled
+        = f.label :cmp_update_enabled, 'Enable update of campaigns'
+
+      .field
+        = f.label :cmp_update_interval, 'Campaign update interval'
+        = f.select :cmp_update_interval, options_for_select(DataloadMailchimp::INTERVALS, @dataload.cmp_update_interval)
+        
+  .actions
+    = f.submit 'Update Mailchimp Dataload'

@@ -1,0 +1,41 @@
+<h1>Listing Email Dataload</h1>
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th>Request user</th>
+    <th>Success ind</th>
+    <th>S3</th>
+    <th>Table name</th>
+    <th>Email username</th>
+    <th>Email password</th>
+    <th>Email label</th>
+    <th>Schedule</th>
+    <th>Attachment name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dataload_emails.each do |dataload_email| %>
+  <tr>
+    <td><%= dataload_email.file_name %></td>
+    <td><%= dataload_email.request_user %></td>
+    <td><%= dataload_email.success_ind %></td>
+    <td><%= dataload_email.s3_id %></td>
+    <td><%= dataload_email.table_name %></td>
+    <td><%= dataload_email.email_username %></td>
+    <td><%= dataload_email.email_password %></td>
+    <td><%= dataload_email.email_label %></td>
+    <td><%= dataload_email.schedule %></td>
+    <td><%= dataload_email.attachment_name %></td>
+    <td><%= link_to 'Show', dataload_email %></td>
+    <td><%= link_to 'Edit', edit_dataload_email_path(dataload_email) %></td>
+    <td><%= link_to 'Destroy', dataload_email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Email Dataload', new_dataload_email_path %>

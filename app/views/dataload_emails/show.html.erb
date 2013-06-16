@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>/:</b>
+  <%= @dataload_email./ %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @dataload_email.file_name %>
+</p>
+
+<p>
+  <b>Request user:</b>
+  <%= @dataload_email.request_user %>
+</p>
+
+<p>
+  <b>Success ind:</b>
+  <%= @dataload_email.success_ind %>
+</p>
+
+<p>
+  <b>S3:</b>
+  <%= @dataload_email.s3_id %>
+</p>
+
+<p>
+  <b>Table name:</b>
+  <%= @dataload_email.table_name %>
+</p>
+
+<p>
+  <b>Email username:</b>
+  <%= @dataload_email.email_username %>
+</p>
+
+<p>
+  <b>Email password:</b>
+  <%= @dataload_email.email_password %>
+</p>
+
+<p>
+  <b>Email label:</b>
+  <%= @dataload_email.email_label %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @dataload_email.schedule %>
+</p>
+
+<p>
+  <b>Attachment name:</b>
+  <%= @dataload_email.attachment_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_dataload_email_path(@dataload_email) %> |
+<%= link_to 'Back', dataload_emails_path %>

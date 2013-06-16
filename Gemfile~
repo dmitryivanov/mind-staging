@@ -1,0 +1,148 @@
+source 'https://rubygems.org'
+
+# Evan's notation
+# REPLACE: suggested replacement for a gem currently in the Gemfile.  Replaces gem on the previous line.
+# CONSIDER: food for thought; optional but worthy of consideration
+# ALERT: important stuff; give this a lot of attention
+
+gem 'rails', '~> 3.2.11'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'mysql2', '~>0.3.10'
+gem 'json', '1.7.7'
+gem 'will_paginate', '~> 3.0'
+# REPLACE: "kaminari" by amatsuda is
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'gibbon'
+gem 'shopify_app'
+gem 'hpricot'
+# REPLACE: "nokogiri". hpricot is not being actively maintained
+gem 'premailer-rails3'
+gem 'pg'
+gem 'aws-s3'
+gem 'amazon-ec2'
+gem 'thin'
+# REPLACE: Consider using "puma" (http://puma.io/)
+gem 'sidekiq'
+gem 'exception_notification'
+gem 'haml', '>= 4.0.0.rc.1'
+gem 'html2haml'
+gem 'state_machine'
+gem 'garb', :git => 'git://github.com/Sija/garb.git'
+gem "activerecord-import", ">= 0.2.0"
+gem "hashie"
+gem 'draper', '~> 1.0'
+gem 'dotenv-rails', :groups => [:development, :test]
+# Pierce - wondering what additional setup is needed for airbrake?
+gem 'airbrake'
+gem 'newrelic_rpm'
+#
+# Implement Evan's suggestions on `devise`:
+# "devise" is excellent for authentication. However, if you need to customize it
+# beyond it's UI for login, etc., it quickly becomes onerous. That is,
+# customizing devise to handle custom authentication scenarios is often more
+# painful than writing your own authentication solution. Still recommend devise
+# nonetheless.
+gem 'devise', '~> 2.2.3'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem "handlebars_assets", :git => 'git://github.com/leshill/handlebars_assets.git'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+  gem 'jquery-rails', '~> 2.0.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+  gem 'webmock'  
+  gem 'vcr'
+  gem 'launchy'
+  gem 'database_cleaner'
+  #gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'capybara'
+  gem 'shoulda'
+end
+  
+group :development, :test do
+  gem 'faker'
+  gem "rspec-rails", "~> 2.0"
+  gem "factory_girl_rails", "~> 4.0", require => false
+  gem 'spork', '~> 1.0rc'  
+  gem 'poltergeist'
+  gem 'guard-livereload'  
+  gem 'guard-jasmine'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'jasminerice', :git => 'git://github.com/bradphelan/jasminerice.git'
+  
+  # Note: poltergeist and guard-jasmine requires phantomjs, 
+  # install with homebrew on osx: "brew install phantomjs"
+end
+
+# Required for better performance of guard. Description of the workaround:
+# https://github.com/guard/guard#efficient-filesystem-handling
+group :development do
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+end
+
+# To use ActiveModel has_secure_password
+#gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+# CONSIDER: If you choose to write a JSON API, please, do not use jbuilder.  "rabl" and "active_model_serializers" are both far better
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'ruby-debug19', :require => 'ruby-debug'
+
+#group :test do
+  # Pretty printed test output
+  #gem 'turn', :require => false
+  # CONSIDER: using the "pry" gem. It's a terrific debugging aid.
+  
+  # ALERT: Your app is certainly going to leverage a lot of JavaScript. You should consider TDDing or at least unit testing your JavaScript.  For that, I recommend "jasmine-gem", "jasmine-rails", and "jasmine-fixture".  Also consider "jasmine-given" as it provides for clean and predictable testing semantics.
+  
+  # from Alex, about jasmine testing - jasminerice gem already contains fixtures and rails integration,
+  # and utilizes phantom.js (instead of qt webkit), assets pipline and coffeescript.
+  
+  # CONSIDER: "rspec" as your testing DSL of choice.  While minitest is slowly gaining in popularity (frankly, I prefer it), the majority of Rails developers still seem to prefer rspec.  For a barometer, every client project of mine in recent memory has used rspec.
+  
+  # CONSIDER: writing so-called acceptance tests.  These tests are user-facing, as though a user were clicking links and buttons in your app.  As your app will heavily leverage JS, you will want to use either poltergeist (https://github.com/jonleighton/poltergeist) or capybara-webkit (https://github.com/thoughtbot/capybara-webkit) to allow your automated tests to also execute JS.  While I've used the latter with success, the former is almost certainly easier to set up due to lack of dependency upon the Qt library.
+  
+  # CONSIDER: writing acceptance tests for each "happy path" for a given feature.  Acceptance tests are useful for fleshing out how a user interacts with a feature.  However, they are slow to execute.  Have them execute from a separate rake task.  This will allow your default rake task to run only the lower-level (faster) tests, providing for a faster feedback loop when TDDing (and this is essential to effective TDD).
+#end
+
+
+
+# CONSIDER: "cancan" or "canable" for access control.  I've used "cancan" in the past; it has the virtue of defining access rules separately from the model; it may not play well with edr.  "canable" is an extremely simple gem that should work well with PORO domain model objects (see the ALERTs below) but it does require that your domain model be access control-aware which is a little unfortunate.
+
+# CONSIDER: "draper" for keeping logic out of your HAML templates. While you can and should still use Helpers, Helpers can quickly become the drunk drawer of your application's view layer.  The Presenter pattern provides a more object-oriented abstration than helpers making your view layer easier to maintain.
+
+# ALERT: your app seems likely to evolve a complex domain model given the number of disparate data sources and configuration decisions that you will likely wish to persist and interact with.  Rails apps often become cumbersome once they've reached approximately 20 models/tables (granted this is a fuzzy boundary but based upon my experience).  For these apps, ActiveRecord often becomes something of a liability.  You may benefit from something like edr (https://github.com/nulogy/edr) to separate your persistence from your domain model logic. edr makes your model easier to test; you can focus on your domain model behavior without any dependence upon the database.  This means no test "fixtures" and no factories (e.g., factory_girl, machinist, etc.).  While you will still want to test your ActiveRecord::Base subclasses, they should require far less testing as your domain logic resides in separate "plain old Ruby classes" that have little to no dependency upon Rails.  edr is still a bit complex: it has a lot of little moving parts.  I hope to improve it significantly in the near future (in my copious free time ;-) ).
+
+# ALERT: Be careful to restrict the Javascript primarily to rendering data in the view and sending data to the server.  The server/domain model should handle the bulk of the "thinking" in the app.  The reason is simple: security.  You can not trust the browser because the user has complete access to it. Every piece of data sent from the client must be treated suspiciously.
+# ALERT: Take *extreme* care in allowing users to execute arbitrary SQL on their own RDS instances.  Unless you have RDS-level permissions per user per organization/customer or meticulously restrict users to read-only permissions, you open yourself to all kinds of malicious SQL. *This is super risky*.
+# ALERT: You will likely want an auditing mechanism because of your HIPAA client.  Consider using the paper_trail gem (https://github.com/airblade/paper_trail)
+
+# CONSIDER: Depending on how you host your Rails app (I'm unsure if you're cloud hosting or PaaS hosting, e.g. Heroku) you may want to use Papertrail (the service: http://papertrailapp.com/) not to be confused with Papertrail (the gem).  It's handy for emailing you when certain conditions are detected in your log file as well as maintaining your log file.  This is especially handy if you use a PaaS.
+
+# CONSIDER: I have not used this gem but "https://github.com/heroku/databasedotcom" is supposed to be useful for accessing the Salesforce API.
+
+# ALERT: Put files containing 3rd party servicecredentials in your .gitignore.  You can't access control credentials to 3rd party services if everyone on your team can see them in your git repositories.
+
+# CONSIDER: I'd suggest using a PaaS except that you are already going to be neck deep in other parts of the AWS stack.  Personally, I like removing Dev Ops from the equation for as long as possible; it's just more work that you have to do.  But your app at least calls for third party DBs.  Though I wonder if they need to be RDS?  Could you potentially use Heroku Postgres for all of your DBs?  Granted, you will need to be able to programmatically create databases eventually when you try to scale your app up to become a full-blown product.

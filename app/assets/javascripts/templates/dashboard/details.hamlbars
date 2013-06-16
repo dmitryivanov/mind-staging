@@ -1,0 +1,10 @@
+%p
+  %b Name:
+  %span.editable{ 'data-attribute-name' => 'name' } {{ name }}
+
+%p
+  %b Description:
+  %span.editable{ 'data-attribute-name' => 'description' } {{ description }}
+  
+%p
+  %button.add_module Add module

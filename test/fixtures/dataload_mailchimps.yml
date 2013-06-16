@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  /: MyString
+  file_name: MyString
+  request_user: MyString
+  success_ind: MyString
+  table_name: MyString
+  mc_username: MyString
+  mc_password: MyString
+  campaigns: MyString
+  metrics: MyString
+  schedule: MyString
+
+two:
+  /: MyString
+  file_name: MyString
+  request_user: MyString
+  success_ind: MyString
+  table_name: MyString
+  mc_username: MyString
+  mc_password: MyString
+  campaigns: MyString
+  metrics: MyString
+  schedule: MyString

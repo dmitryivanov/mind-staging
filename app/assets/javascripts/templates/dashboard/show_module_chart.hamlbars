@@ -1,0 +1,7 @@
+.chart_title
+  {{#if isBarChart}}
+  {{ metric_name }} by {{ dimension_name }}
+  {{else}}
+  {{ metric_name }} by {{ date_name }} for {{ dimension_name }}: {{ dimension_value_name }}
+  {{/if}}
+.chart

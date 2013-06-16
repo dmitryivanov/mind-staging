@@ -1,0 +1,15 @@
+<table border="0" cellpadding="20" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top">
+      <% if @image_url %>
+        <%= image_tag @image_url, :style => "max-width:260px;" %>
+        <br/>
+        <br/>
+      <% end %>
+      <div>
+        <h4 class="h4"><%= @header || 'Section' %></h4>
+        <%= @body || 'content' %>
+      </div>
+    </td>
+  </tr>
+</table>

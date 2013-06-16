@@ -1,0 +1,46 @@
+-#
+  Note: This page is a small backbone.js app, it uses following files
+  
+  Manifest: 
+  #------------------------------------
+  app/assets/javascripts/dashboard.js
+  
+  Coffeescript includes: 
+  #------------------------------------
+  app/assets/javascripts/dashboard/
+  
+  Templates, hamlbars (haml + handlebars): 
+  #------------------------------------
+  app/assets/javascripts/templates/dashboard/
+    
+    
+  TODO:  
+  #------------------------------------
+  
+  Sortable:
+  Add to sortable: http://stackoverflow.com/questions/8804633/add-to-jquery-ui-sortable-list
+  iGoogle-like widgets: http://net.tutsplus.com/tutorials/javascript-ajax/inettuts/
+  
+  Zombie views & children:
+  Look into that further, as we need to properly unbind events and remove child views
+  
+  
+  
+- content_for :head do
+  = javascript_include_tag 'dashboard'
+  = stylesheet_link_tag 'dashboard'
+
+  :coffeescript
+    $ ->
+      window.Dashboard.init({
+        dashboard_data: #{@dashboard.to_json}
+        dashboard_modules: #{@dashboard_modules.to_json}
+        chart_selectors_data: #{@chart_selectors_data.to_json}
+      })
+      
+#dashboard
+  .details
+  .modules_list
+  <br style="clear: left;" />
+
+%p=link_to 'Back', dashboards_path

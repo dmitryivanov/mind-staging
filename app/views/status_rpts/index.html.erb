@@ -1,0 +1,27 @@
+<h1>Listing status_rpts</h1>
+
+<table>
+  <tr>
+    <th> status</th>
+    <th>Description</th>
+    <th>Error msg</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @status_rpts.each do |status_rpt| %>
+  <tr>
+    <td><%= status_rpt. status_id %></td>
+    <td><%= status_rpt.description %></td>
+    <td><%= status_rpt.error_msg %></td>
+    <td><%= link_to 'Show', status_rpt %></td>
+    <td><%= link_to 'Edit', edit_status_rpt_path(status_rpt) %></td>
+    <td><%= link_to 'Destroy', status_rpt, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Status rpt', new_status_rpt_path %>

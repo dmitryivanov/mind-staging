@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+   campaign_id: MyString
+  description: MyText
+
+two:
+   campaign_id: MyString
+  description: MyText

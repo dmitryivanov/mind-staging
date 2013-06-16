@@ -1,0 +1,96 @@
+<div id="header">
+  <div class="container">
+    <div id="logo" class="one-third column">
+      <h1 class="logo">
+        <%= link_to image_tag("new_msd_logo.png") %>
+      </h1>
+    </div>
+    <div class="two-thirds column">
+      <div id="login_links">
+        <% if user_signed_in? %>
+          logged in as <%= current_user.email %>.
+          <%= link_to "log out", destroy_user_session_path %>
+        <% else %>
+          <%= link_to "log in", new_user_session_path %>
+        <% end %>
+      </div>
+      <ul class="navigation">
+        <li>
+          <a href="/customers">Customers</a>
+          <ul>
+            <li>
+              <a href="/customers">customer list</a>
+            </li>
+            <li>
+              <a href="/customers/new">new customer</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/campaigns">Campaigns</a>
+          <ul>
+            <li>
+              <a href="/dashboards">summary</a>
+            </li>
+            <li>
+              <a href="/campaigns/new">new campaign</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/dashboards">Dashboards</a>
+          <ul>
+            <li>
+              <a href="/dashboards">summary</a>
+            </li>
+            <li>
+              <a href="/dashboards/new">new dashboard</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/status_rpts">Dataloads</a>
+          <ul>
+            <li>
+              <a href="/dataloads">list</a>
+            </li>
+            <li>
+              <a href="/dataload_logs">status</a>
+            </li>
+            <li>
+              <a href="/dataload_manuals/new">customer warranty</a>
+            </li>
+            <li>
+              <a href="/dataload_mailchimp/edit">mailchimp</a>
+            </li>
+            <li>
+              <%= link_to 'google analytics', dataload_gas_path %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/users">Admin</a>
+          <ul>
+            <li>
+              <a href="/users">users</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="titlebar">
+  <% # This is so that IE7-9 will display the background better. It makes me sad. - EB %>
+  <div class="background_container">
+    <div class="container">
+      <div class="row">
+        <% if content_for? :page_title %>
+          <h1 class="title"><%= yield :page_title %>
+        </h1>
+        <% end %>
+        <%= yield :titlebar %>
+      </div>
+    </div>
+  </div>
+</div>

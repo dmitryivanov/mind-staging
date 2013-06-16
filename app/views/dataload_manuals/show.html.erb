@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<% if @dataload_manual.dataload.file %>
+  <p>
+    <b>S3:</b>
+    <%= @dataload_manual.dataload.file.url %>
+  </p>
+
+  <p class="csv_import_status" id="dataload-<%= @dataload_manual.id %>">
+  <%- unless @dataload_manual.csv_imported? %>
+    <%= image_tag 'loading.gif' %> Importing...
+  <% else %>
+    File has been imported
+  <% end %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', dataload_manuals_path %>

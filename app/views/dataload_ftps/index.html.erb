@@ -1,0 +1,41 @@
+<h1>Listing FTP Dataload</h1>
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th>Request user</th>
+    <th>Success ind</th>
+    <th>S3</th>
+    <th>Table name</th>
+    <th>Ftp url</th>
+    <th>Ftp username</th>
+    <th>Ftp password</th>
+    <th>Ftp directory</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dataload_ftps.each do |dataload_ftp| %>
+  <tr>
+    <td><%= dataload_ftp.file_name %></td>
+    <td><%= dataload_ftp.request_user %></td>
+    <td><%= dataload_ftp.success_ind %></td>
+    <td><%= dataload_ftp.s3_id %></td>
+    <td><%= dataload_ftp.table_name %></td>
+    <td><%= dataload_ftp.ftp_url %></td>
+    <td><%= dataload_ftp.ftp_username %></td>
+    <td><%= dataload_ftp.ftp_password %></td>
+    <td><%= dataload_ftp.ftp_directory %></td>
+    <td><%= dataload_ftp.schedule %></td>
+    <td><%= link_to 'Show', dataload_ftp %></td>
+    <td><%= link_to 'Edit', edit_dataload_ftp_path(dataload_ftp) %></td>
+    <td><%= link_to 'Destroy', dataload_ftp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New FTP Dataload', new_dataload_ftp_path %>

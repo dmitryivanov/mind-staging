@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b> status:</b>
+  <%= @status_rpt. status_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @status_rpt.description %>
+</p>
+
+<p>
+  <b>Error msg:</b>
+  <%= @status_rpt.error_msg %>
+</p>
+
+
+<%= link_to 'Edit', edit_status_rpt_path(@status_rpt) %> |
+<%= link_to 'Back', status_rpts_path %>

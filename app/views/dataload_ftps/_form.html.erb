@@ -1,0 +1,61 @@
+<%= form_for(@dataload_ftp) do |f| %>
+  <% if @dataload_ftp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dataload_ftp.errors.count, "error") %> prohibited this dataload_ftp from being saved:</h2>
+
+      <ul>
+      <% @dataload_ftp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :/ %><br />
+    <%= f.text_field :/ %>
+  </div>
+  <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.text_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :request_user %><br />
+    <%= f.text_field :request_user %>
+  </div>
+  <div class="field">
+    <%= f.label :success_ind %><br />
+    <%= f.text_field :success_ind %>
+  </div>
+  <div class="field">
+    <%= f.label :s3_id %><br />
+    <%= f.text_field :s3_id %>
+  </div>
+  <div class="field">
+    <%= f.label :table_name %><br />
+    <%= f.text_field :table_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ftp_url %><br />
+    <%= f.text_field :ftp_url %>
+  </div>
+  <div class="field">
+    <%= f.label :ftp_username %><br />
+    <%= f.text_field :ftp_username %>
+  </div>
+  <div class="field">
+    <%= f.label :ftp_password %><br />
+    <%= f.text_field :ftp_password %>
+  </div>
+  <div class="field">
+    <%= f.label :ftp_directory %><br />
+    <%= f.text_field :ftp_directory %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule %><br />
+    <%= f.text_field :schedule %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

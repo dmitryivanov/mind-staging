@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dataload_type: MyString
+  dataload_direction: MyString
+  is_successfull: false
+  num_rows: 1
+  errors: MyText
+
+two:
+  dataload_type: MyString
+  dataload_direction: MyString
+  is_successfull: false
+  num_rows: 1
+  errors: MyText

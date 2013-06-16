@@ -1,0 +1,39 @@
+<h1>Listing MailChimp Reporting Dataload</h1>
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th>Request user</th>
+    <th>Success ind</th>
+    <th>Table name</th>
+    <th>Mc username</th>
+    <th>Mc password</th>
+    <th>Campaigns</th>
+    <th>Metrics</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dataload_mailchimps.each do |dataload_mailchimp| %>
+  <tr>
+    <td><%= dataload_mailchimp.file_name %></td>
+    <td><%= dataload_mailchimp.request_user %></td>
+    <td><%= dataload_mailchimp.success_ind %></td>
+    <td><%= dataload_mailchimp.table_name %></td>
+    <td><%= dataload_mailchimp.mc_username %></td>
+    <td><%= dataload_mailchimp.mc_password %></td>
+    <td><%= dataload_mailchimp.campaigns %></td>
+    <td><%= dataload_mailchimp.metrics %></td>
+    <td><%= dataload_mailchimp.schedule %></td>
+    <td><%= link_to 'Show', dataload_mailchimp %></td>
+    <td><%= link_to 'Edit', edit_dataload_mailchimp_path(dataload_mailchimp) %></td>
+    <td><%= link_to 'Destroy', dataload_mailchimp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New MailChimp Reporting Dataload', new_dataload_mailchimp_path %>

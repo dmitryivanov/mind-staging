@@ -1,0 +1,81 @@
+Notes:
+<input type="text" class="notes" value="{{ notes }}" />
+%br/
+
+%div.select_module_type
+  Module type:
+  %select{ :class => "module_type" }
+    {{#select module_type}}
+    %option{ :value => '' }
+    %option{ :value => 'bar_chart' } Bar chart
+    %option{ :value => 'trend_chart' } Trend chart  
+    {{/select}}
+
+%div.select_table
+  Table:
+  %select{ :class => "table" }
+    {{#select table}}
+    %option{ :value => '' }
+  
+    {{#each tables}}
+    %option{ :value => '{{ value }}' } {{ name }}
+    {{/each}}
+  
+    {{/select}}
+  
+{{#each tables}}
+
+%div.dimension{"data-table" => "{{value}}" }
+  Dimension:
+  %select.dimension{ "data-table" => "{{value}}" }
+    {{#select dimension}}
+    %option{ :value => '' }
+    {{#each dimensions}}
+    %option{ :value => '{{ value }}' } {{ name }}
+    {{/each}}
+    {{/select}}
+    
+{{/each}}
+
+%div.select_dimension_value
+  Dimension value:
+  %select.dimension_value
+    {{#select dimension_value}}
+    {{/select}}
+  
+  .preloader
+    %img{ 'src' => "/assets/loading.gif" }
+    %br/
+    %br/    
+
+{{#each tables}}
+
+%div.metric{"data-table" => "{{value}}" }
+  Metric:
+  %select.metric{ "data-table" => "{{value}}" }
+    {{#select metric}}
+    %option{ :value => '' }
+    {{#each metrics}}
+    %option{ :value => '{{value}}' } {{name}}
+    {{/each}}
+    {{/select}}    
+    
+%div.date{"data-table" => "{{value}}" }
+  Date:
+  %select.date{ "data-table" => "{{value}}" }
+    {{#select date}}
+    %option{ :value => '' }
+    {{#each dates}}
+    %option{ :value => '{{value}}' } {{name}}
+    {{/each}}
+    {{/select}}
+      
+{{/each}}
+
+%div.select_calculation_type
+  Calculation type:
+  %select{ :class => "calculation_type" }
+    {{#select calculation_type}}
+    %option{ :value => '' }
+    %option{ :value => 'count' } Count
+    {{/select}}

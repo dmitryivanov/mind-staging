@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta</title>
+
+    <link rel="stylesheet" type="text/css" href="http://documentup.com/stylesheets/themes/v1.css">
+
+  </head>
+  <body><div id="container">
+  <div id="nav">
+
+      <div id="header">
+        <a href="#" id="logo">Meta</a>
+      </div>
+
+    <ul id="sections">
+
+        <li>
+          <a href="#overview">Overview</a>
+
+        </li>
+
+        <li>
+          <a href="#sample-mailer">Sample mailer</a>
+
+        </li>
+
+        <li>
+          <a href="#creating-your-own-mailer">Creating your own mailer</a>
+
+            <ul>
+
+                <li>
+                  <a href="#creating-your-own-mailer/mailer-views">Mailer Views</a>
+                </li>
+
+                <li>
+                  <a href="#creating-your-own-mailer/automatic-plain-text">Automatic Plain-Text</a>
+                </li>
+
+                <li>
+                  <a href="#creating-your-own-mailer/images-assets">Images &amp; Assets</a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li>
+          <a href="#sending-emails-from-your-app">Sending emails from your app</a>
+
+        </li>
+
+        <li>
+          <a href="#conclusion-help">Conclusion / Help</a>
+
+        </li>
+
+    </ul>
+
+
+      <div class="extra twitter">
+        <iframe allowtransparency="true" frameborder="0" scrolling="no" style="width:162px; height:20px;" src="https://platform.twitter.com/widgets/follow_button.html?screen_name=railsthemes&show_count=false"></iframe>
+      </div>
+
+  </div>
+  <div id="content">
+
+    <h1>Emails Usage &amp; Style Guide</h1>
+<p>This document explains how to use the RailsThemes mail template system.
+
+
+</p>
+<h2 id='overview'>Overview</h2 id='overview'>
+<p>RailsThemes email templates use <a href="http://guides.rubyonrails.org/action_mailer_basics.html">Action Mailer</a> as the base, which is the Rails default for sending and receiving emails with your application. This should probably work with other mail systems as well with some tweaking. If you have issues or find a good solution, we&#39;d love to hear about it.
+
+</p>
+<p>We give you a layout file and some images for the email, and you can create blocks that will go in your email template. This gives you a nice-looking and modular structure to build on.
+
+</p>
+<h2 id='sample-mailer'>Sample mailer</h2 id='sample-mailer'>
+<p>The sample email is located at <code>app/views/railsthemes_mailer/test_email.html.erb</code>. In there, you will see some content_for sections that specify where the content blocks are to live, and then inside of them the specification of the blocks to show.
+
+</p>
+<h2 id='creating-your-own-mailer'>Creating your own mailer</h2 id='creating-your-own-mailer'>
+<p>To create your very own RailsThemes-styled mailer, create a mailer from the command-line.
+
+</p>
+<pre><code><span class="variable">$ </span><span class="identifier">rails</span> <span class="identifier">g</span> <span class="identifier">mailer</span> <span class="constant">YourMailerName</span></code></pre>
+<p>Then, add the first few lines from the RailsthemesMailer class located at <code>app/mailers/railsthemes_mailer.rb</code>:
+
+</p>
+<pre><code><span class="title">helper</span> <span class="type">RailsthemesMailerHelper</span>
+<span class="title">layout</span><span class="string"> 'railsthemes_mailer'</span></code></pre>
+<p>You can add mailer actions to the mailer class, and then specify the views in <code>app/views/your_mailer_name/view.html.erb</code>. Fortunately, there is an email layout to use, and some helper methods to make composing your emails easier.
+
+</p>
+<h3 id='creating-your-own-mailer/mailer-views'>Mailer Views</h3 id='creating-your-own-mailer/mailer-views'>
+<p>In Theme Meta, you get a main overview block and blocks that are stacked horizontally with two blocks per section.
+
+
+</p>
+<p>When declaring a block, you can specify parameters to it in a hash or inside of special methods that are listed in the <code>app/helpers/railsthemes_mailer_helper.rb</code> file:
+
+</p>
+<pre><code><span class="vbscript">&lt;% content_for :email_blocks <span class="keyword">do</span> %></span>
+  <span class="vbscript">&lt;%= email_block <span class="keyword">do</span> %></span>
+    <span class="vbscript">&lt;% content_for :left_side <span class="keyword">do</span> %></span>
+      <span class="vbscript">&lt;%= side_block :header => <span class="comment">'Test header override' do %></span></span>
+        <span class="vbscript">&lt;% image <span class="comment">'http://placehold.it/260x200' %></span></span>
+        Left side content
+      <span class="vbscript">&lt;% <span class="keyword">end</span> %></span>
+    <span class="vbscript">&lt;% <span class="keyword">end</span> %></span>
+  <span class="vbscript">&lt;% <span class="keyword">end</span> %></span>
+<span class="vbscript">&lt;% <span class="keyword">end</span> %></span></code></pre>
+<p>This will create an email section that has the email_block formatting. Its header is &#39;Test header override&#39; and an image that is placed above the section. The remaining text is the main content of the block.
+
+
+</p>
+<p>Additionally, you should set the instance variable <code>@subject</code> to a string that you want displayed as the subject line of the email. You can do this in the mailer action or somewhere in your view.
+
+</p>
+<h3 id='creating-your-own-mailer/automatic-plain-text'>Automatic Plain-Text</h3 id='creating-your-own-mailer/automatic-plain-text'>
+<p>Your text portions of the email work upon installation set up because we use the <a href="https://github.com/fphilipe/premailer-rails3">premailer-rails3</a> gem. This gem looks at the HTML portions of your emails and automatically creates the .text.erb portions. This is useful for people using older email clients. If you want to specify your own text portion of the email, just create a file in the same directory as your HTML email template with the same name but with the extension .text.erb instead of .html.erb.
+
+</p>
+<h3 id='creating-your-own-mailer/images-assets'>Images &amp; Assets</h3 id='creating-your-own-mailer/images-assets'>
+<p>Images and other assets go through the asset pipeline because of the premailer-rails3 gem. This also lets us have external stylesheets that we can inline with our HTML email to reduce requests and make for a better experience for certain email clients (plus not cluttering up your layout editing with CSS information, like all normal Rails views.)
+
+
+</p>
+<h2 id='sending-emails-from-your-app'>Sending emails from your app</h2 id='sending-emails-from-your-app'>
+<p>In this section, we&#39;ll touch on some ways to set up your app to send emails.
+
+</p>
+<p>Generally you are going to want to modify your environment files to change Action Mailer&#39;s configuration. Then you can test sending yourself emails by (re)starting your local development server and hitting <a href="http://localhost:3000/railsthemes/email">http://localhost:3000/railsthemes/email</a>.
+
+</p>
+<p>One way to do this is to set up your <code>config/environments/development.rb</code> (for example) to include the following if you have <code>sendmail</code> set up:
+
+</p>
+<pre><code>config<span class="variable">.action_mailer</span><span class="variable">.raise_delivery_errors</span> = <span class="literal">true</span>
+config<span class="variable">.action_mailer</span><span class="variable">.perform_deliveries</span> = <span class="literal">true</span>
+ActionMailer::Base<span class="variable">.delivery_method</span> = :sendmail</code></pre>
+<p>Another common way to test app emails is to use Google&#39;s Gmail servers to send the mail. See this <a href="http://stackoverflow.com/questions/4929680">Stack Overflow post</a> for more details.
+
+</p>
+<p>Other people use SendGrid or other similar services, which provide documentation on how to get them set up.
+
+</p>
+<p>If you just want to be able to see what the emails look like locally without sending, you can try installing and using the <a href="https://github.com/sj26/mailcatcher/">mailcatcher</a> gem. Here&#39;s a sample configuration:
+
+</p>
+<pre><code>config.action_mailer.raise_delivery_errors = <span class="keyword">true</span>
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = { :address => <span class="string">"localhost"</span>, :port => <span class="number">1025</span> }
+config.action_mailer.default_url_options = { :host => <span class="string">'localhost:3000'</span> }
+config.action_mailer.asset_host = <span class="string">'http://localhost:3000'</span>
+config.action_mailer.default_url_options = {
+  :host => <span class="string">'localhost'</span>,
+  :port => <span class="string">'3000'</span>,
+  :only_path => <span class="keyword">false</span>
+}</code></pre>
+<h2 id='conclusion-help'>Conclusion / Help</h2 id='conclusion-help'>
+<p>Please send any questions or ideas on how this documentation can be improved to support@railsthemes.com. Thanks!
+</p>
+
+  </div>
+</div></body>
+</html>

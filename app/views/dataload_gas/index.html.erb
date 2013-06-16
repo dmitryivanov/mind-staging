@@ -1,0 +1,41 @@
+<h1>Listing Google Analytics Dataload</h1>
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th>Request user</th>
+    <th>Success ind</th>
+    <th>S3</th>
+    <th>Table name</th>
+    <th>Ga username</th>
+    <th>Ga password</th>
+    <th>Dimensions</th>
+    <th>Metrics</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dataload_gas.each do |dataload_ga| %>
+  <tr>
+    <td><%= dataload_ga.file_name %></td>
+    <td><%= dataload_ga.request_user %></td>
+    <td><%= dataload_ga.success_ind %></td>
+    <td><%= dataload_ga.s3_id %></td>
+    <td><%= dataload_ga.table_name %></td>
+    <td><%= dataload_ga.ga_username %></td>
+    <td><%= dataload_ga.ga_password %></td>
+    <td><%= dataload_ga.dimensions %></td>
+    <td><%= dataload_ga.metrics %></td>
+    <td><%= dataload_ga.schedule %></td>
+    <td><%= link_to 'Show', dataload_ga %></td>
+    <td><%= link_to 'Edit', edit_dataload_ga_path(dataload_ga) %></td>
+    <td><%= link_to 'Destroy', dataload_ga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Google Analytics Dataload', new_dataload_ga_path %>

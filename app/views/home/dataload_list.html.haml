@@ -1,0 +1,56 @@
+- content_for :head do
+  :css
+    td.created_at { white-space: nowrap }
+    #contents { padding-bottom: 18px }
+    
+%h1 Listing processed dataloads
+
+%h3 Manual Dataload
+
+%table
+  %tr
+    %th Connector
+    %th User
+    %th Last run
+  - @dataload_manuals.each do |d|
+    %tr
+      %td Manual
+      %td= d.user ? d.user.email : ''
+      %td= d.updated_at
+      
+%p &nbsp;      
+      
+- if @dataload_mailchimp
+  %h3 Mailchimp Dataload
+
+  %table
+    %tr
+      %th Connector
+      %th Schedule
+      %th Last run
+
+    - if @dataload_mailchimp.subscr_download_enabled?
+      - @dataload_mailchimp.source_lists.each do |source_list|
+        %tr
+          %td Mailchimp subcriber download from list '#{source_list.name}'
+          %td= @dataload_mailchimp.subscr_download_interval
+          %td= source_list.subscr_download_last_runned_at
+        
+    - if @dataload_mailchimp.subscr_upload_enabled?
+      - @dataload_mailchimp.destination_lists.each do |destination_list|
+        %tr
+          %td Mailchimp subcriber upload to list '#{destination_list.name}'
+          %td= @dataload_mailchimp.subscr_upload_interval
+          %td= destination_list.subscr_upload_last_runned_at
+
+    - if @dataload_mailchimp.subscr_move_enabled?
+      %tr
+        %td Mailchimp subcriber moving from "get dialed in" to "monthly newsletter"'
+        %td= @dataload_mailchimp.subscr_move_interval
+        %td= @dataload_mailchimp.subscr_move_last_runned_at  
+              
+    - if @dataload_mailchimp.cmp_update_enabled?
+      %tr
+        %td Mailchimp campaign update
+        %td= @dataload_mailchimp.cmp_update_interval
+        %td= @dataload_mailchimp.cmp_update_last_runned_at

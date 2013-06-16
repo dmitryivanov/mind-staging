@@ -1,0 +1,24 @@
+%form.edit_dataload_ga{ action: 'javascript:void(0)' }
+
+  %input#dataload_ga_ga_username{type: :text}
+  
+  %input#dataload_ga_ga_password{type: :password}
+  
+  %select#dataload_ga_ga_account_id
+    %option{ value: '' }
+    %option{value: 1445323} Marketing
+    %option{value: 1241412} Warehousing
+    
+  .profile_container{ rel: 1445323, style: "display:none" }
+    %select.profile_selector{ rel: 1445323 }
+      %option{ value: '' }
+      %option{ value: "16550641" } Marketing-this
+      %option{ value: "16550642" } Marketing-that
+      
+  .profile_container{ rel: 1241412, style: "display:none" }
+    %select.profile_selector{ rel: 1241412 }
+      %option{ value: '' }
+      %option{ value: "2901213" } Warehousing-this
+      %option{ value: "2141412" } Warehousing-that
+      
+  %input{ name: "commit", type: "submit", value: "Update Dataload ga" }

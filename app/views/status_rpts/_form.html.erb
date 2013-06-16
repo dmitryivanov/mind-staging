@@ -1,0 +1,29 @@
+<%= form_for(@status_rpt) do |f| %>
+  <% if @status_rpt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@status_rpt.errors.count, "error") %> prohibited this status_rpt from being saved:</h2>
+
+      <ul>
+      <% @status_rpt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label : status_id %><br />
+    <%= f.text_field : status_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :error_msg %><br />
+    <%= f.text_field :error_msg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

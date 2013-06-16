@@ -1,0 +1,5 @@
+<%= form_tag('/railsthemes/send_email') do |f| %>
+  <div><%= label_tag 'email', 'Email to send to' %></div>
+  <div><%= email_field_tag 'email' %></div>
+  <div><%= submit_tag 'Send' %></div>
+<% end %>

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>/:</b>
+  <%= @dataload_ga./ %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @dataload_ga.file_name %>
+</p>
+
+<p>
+  <b>Request user:</b>
+  <%= @dataload_ga.request_user %>
+</p>
+
+<p>
+  <b>Success ind:</b>
+  <%= @dataload_ga.success_ind %>
+</p>
+
+<p>
+  <b>S3:</b>
+  <%= @dataload_ga.s3_id %>
+</p>
+
+<p>
+  <b>Table name:</b>
+  <%= @dataload_ga.table_name %>
+</p>
+
+<p>
+  <b>Ga username:</b>
+  <%= @dataload_ga.ga_username %>
+</p>
+
+<p>
+  <b>Ga password:</b>
+  <%= @dataload_ga.ga_password %>
+</p>
+
+<p>
+  <b>Dimensions:</b>
+  <%= @dataload_ga.dimensions %>
+</p>
+
+<p>
+  <b>Metrics:</b>
+  <%= @dataload_ga.metrics %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @dataload_ga.schedule %>
+</p>
+
+
+<%= link_to 'Edit', edit_dataload_ga_path(@dataload_ga) %> |
+<%= link_to 'Back', dataload_gas_path %>

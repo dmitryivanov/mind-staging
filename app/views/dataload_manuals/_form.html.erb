@@ -1,0 +1,41 @@
+<%= form_for(@dataload_manual) do |f| %>
+  <% if @dataload_manual.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dataload_manual.errors.count, "error") %> prohibited this manual dataload from being saved:</h2>
+
+      <ul>
+      <% @dataload_manual.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :/ %><br />
+    <%= f.text_field :/ %>
+  </div>
+  <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.text_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :request_user %><br />
+    <%= f.text_field :request_user %>
+  </div>
+  <div class="field">
+    <%= f.label :success_ind %><br />
+    <%= f.text_field :success_ind %>
+  </div>
+  <div class="field">
+    <%= f.label :s3_id %><br />
+    <%= f.text_field :s3_id %>
+  </div>
+  <div class="field">
+    <%= f.label :table_name %><br />
+    <%= f.text_field :table_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
